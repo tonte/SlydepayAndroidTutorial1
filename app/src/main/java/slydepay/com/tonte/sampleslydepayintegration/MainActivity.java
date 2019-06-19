@@ -1,17 +1,26 @@
 package slydepay.com.tonte.sampleslydepayintegration;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import com.google.gson.Gson;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import slydepay.com.tonte.sampleslydepayintegration.model.APIResponse;
+import slydepay.com.tonte.sampleslydepayintegration.model.InvoiceDetails;
 import slydepay.com.tonte.sampleslydepayintegration.network.APIUtils;
 import slydepay.com.tonte.sampleslydepayintegration.network.ApiInterface;
 
@@ -31,22 +40,18 @@ public class MainActivity extends AppCompatActivity {
         payButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dialog = new ProgressDialog(MainActivity.this);
-                dialog.setMessage("Creating Invoice, Please Wait");
-                dialog.show();
-                createInvoice();
+
             }
         });
 
     }
 
     public void createInvoice(){
-        final Map<String,Object> map = new HashMap();
-        map.put("emailOrMobileNumber", App.EMAIL_OR_MOBILE_NUMBER);
-        map.put("merchantKey",App.MERCHANT_KEY);
-        map.put("amount",10.00);
-        map.put("orderCode", UUID.randomUUID().toString());
 
+    }
+
+
+    public void navigateToWebViewActivity(String orderCode, String payToken){
 
     }
 }

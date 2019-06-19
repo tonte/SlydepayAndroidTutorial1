@@ -19,6 +19,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".WebViewActivity"
+            android:label="@string/title_activity_web_view"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SuccessActivity"
+            android:label="@string/title_activity_success"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
